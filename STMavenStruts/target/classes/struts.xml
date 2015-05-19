@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- Enable Dynamic Method Invocation -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+	<!-- Application is running in Dev mode and refresh struts.xml on each request -->
+	<constant name="struts.devMode" value="true" />
+
+
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="Welcome" class="in.co.sunrays.struts.controller.WelcomeAction">
+			<result name="success">jsp/Welcome.jsp</result>
+		</action>
+		<action name="Login" class="in.co.sunrays.struts.controller.LoginAction">
+			<result name="success" type="redirect">Welcome.action</result>
+			<result name="error">jsp/Login.jsp</result>
+		</action>
+	</package>
+
+	<package name="defaultModuleTiles" namespace="/tiles" extends="tiles-default">
+		<action name="d_*" class="in.co.sunrays.proj2.action.{1}Action"
+			method="input">
+			<result name="success" type="tiles">{1}</result>
+			<result name="input" type="tiles">{1}</result>
+		</action>
+	</package>
+
+	<package name="baseModuleTiles" namespace="/tiles" extends="tiles-default">
+
+		<action name="d_*" class="in.co.sunrays.proj2.action.{1}Action"
+			method="input">
+			<result name="success" type="tiles">{1}</result>
+			<result name="input" type="tiles">{1}</result>
+			<result name="Error" type="redirect">d_Error</result>
+			<result name="Logout" type="redirect">/auth/d_Login</result>
+		</action>
+
+		<action name="s_*" class="in.co.sunrays.proj2.action.{1}Action">
+			<result name="success" type="tiles">{1}</result>
+			<result name="input" type="tiles">{1}</result>
+			<result name="Save" type="tiles">{1}</result>
+			<result name="Delete" type="redirect">d_{1}List</result>
+			<result name="Cancel" type="redirect">d_{1}List</result>
+			<result name="Error" type="redirect">/d_Error</result>
+			<result name="Go" type="tiles">{1}</result>
+			<result name="Sign In" type="tiles">Welcome</result>
+			<result name="Sign Up" type="redirect">/auth/d_UserRegisration</result>
+			<result name="Logout" type="redirect">/auth/d_Login</result>
+			<result name="Register" type="redirect">/auth/d_Login</result>
+		</action>
+	</package>
+
+</struts>
