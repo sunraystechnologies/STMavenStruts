@@ -15,6 +15,9 @@ public class LoginAction extends ActionSupport {
 	private String password = null;
 	private String error = null;
 
+	/**
+	 * Programmatic (manual) Input validation
+	 */
 	@Override
 	public void validate() {
 		if (userId == null || userId.length() == 0) {
