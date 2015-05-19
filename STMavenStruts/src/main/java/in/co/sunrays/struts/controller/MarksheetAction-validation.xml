@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+          "-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+          "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+
+	<field name="rollNo">
+		<field-validator type="requiredstring">
+			<message>You must enter a Roll Number</message>
+		</field-validator>
+	</field>
+	<field name="name">
+		<field-validator type="requiredstring">
+			<message>You must enter a Name</message>
+		</field-validator>
+	</field>
+	<field name="maths">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<param name="max">100</param>
+			<message>
+				Marks must between 0 to 100
+			</message>
+		</field-validator>
+	</field>
+	<field name="physics">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<param name="max">100</param>
+			<message>
+				Marks must between 0 to 100
+			</message>
+		</field-validator>
+	</field>
+	<field name="chemistry">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<param name="max">100</param>
+			<message>
+				Marks must between 0 to 100
+			</message>
+		</field-validator>
+	</field>
+
+</validators>

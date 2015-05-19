@@ -15,6 +15,17 @@ public class LoginAction extends ActionSupport {
 	private String password = null;
 	private String error = null;
 
+	@Override
+	public void validate() {
+		if (userId == null || userId.length() == 0) {
+			addFieldError("userId", "User ID can not be null");
+		}
+
+		if (password == null || password.length() == 0) {
+			addFieldError("password", "Password can not be null");
+		}
+	}
+
 	public String getUserId() {
 		return userId;
 	}

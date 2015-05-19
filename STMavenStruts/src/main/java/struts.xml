@@ -12,13 +12,27 @@
 
 
 	<package name="default" namespace="/" extends="struts-default">
+
 		<action name="Welcome" class="in.co.sunrays.struts.controller.WelcomeAction">
 			<result name="success">jsp/Welcome.jsp</result>
 		</action>
+
 		<action name="Login" class="in.co.sunrays.struts.controller.LoginAction">
 			<result name="success" type="redirect">Welcome.action</result>
 			<result name="error">jsp/Login.jsp</result>
+			<result name="input">jsp/Login.jsp</result>
 		</action>
+
+		<action name="Person" class="in.co.sunrays.struts.controller.PersonAction">
+			<result>jsp/PersonSuccess.jsp</result>
+			<result name="input">jsp/Person.jsp</result>
+		</action>
+
+		<action name="Marksheet" class="in.co.sunrays.struts.controller.MarksheetAction">
+			<result name="success" type="redirect">Welcome.action</result>
+			<result name="input">jsp/Marksheet.jsp</result>
+		</action>
+
 	</package>
 
 	<package name="defaultModuleTiles" namespace="/tiles" extends="tiles-default">
