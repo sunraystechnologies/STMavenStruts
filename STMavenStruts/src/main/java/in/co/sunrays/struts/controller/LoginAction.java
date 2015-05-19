@@ -55,7 +55,9 @@ public class LoginAction extends ActionSupport {
 		if ("admin".equals(userId) && "admin".equals(password)) {
 			return SUCCESS;
 		} else {
-			error = "Invalid ID/Password";
+			// Add error to action that is displayed at view using
+			// <s:actionError/> tag
+			addActionError("Invalid ID/Password");
 			return ERROR;
 		}
 

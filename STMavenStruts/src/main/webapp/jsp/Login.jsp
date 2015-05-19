@@ -6,9 +6,7 @@
 
 	<H1>Login</H1>
 
-	<H2 style="color: red">
-		<s:property value="error" />
-	</H2>
+	<s:actionerror />
 
 	<s:form action="Login">
 		<s:textfield name="userId" label="User Name" />
