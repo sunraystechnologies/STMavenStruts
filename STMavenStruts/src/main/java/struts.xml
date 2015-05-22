@@ -4,12 +4,12 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+
 	<!-- Enable Dynamic Method Invocation -->
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
 
 	<!-- Application is running in Dev mode and refresh struts.xml on each request -->
 	<constant name="struts.devMode" value="true" />
-
 
 	<package name="default" namespace="/" extends="struts-default">
 
@@ -19,7 +19,6 @@
 
 		<action name="Login" class="in.co.sunrays.struts.controller.LoginAction">
 			<result name="success" type="redirect">Welcome.action</result>
-			<result name="error">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
 		</action>
 
@@ -29,7 +28,7 @@
 		</action>
 
 		<action name="Marksheet" class="in.co.sunrays.struts.controller.MarksheetAction">
-			<result name="success" type="redirect">Welcome.action</result>
+			<result name="success" >jsp/Marksheet.jsp</result>
 			<result name="input">jsp/Marksheet.jsp</result>
 		</action>
 

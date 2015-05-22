@@ -14,9 +14,11 @@ public class MarksheetDTO extends BaseDTO {
 	 * Rollno of Student
 	 */
 	private String rollNo;
+	
 	/**
 	 * ID of Student
 	 */
+	
 	private long studentId;
 	/**
 	 * Name of Student

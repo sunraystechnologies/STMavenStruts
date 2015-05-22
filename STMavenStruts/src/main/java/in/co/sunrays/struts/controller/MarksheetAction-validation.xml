@@ -10,6 +10,14 @@
 			<message>You must enter a Roll Number</message>
 		</field-validator>
 	</field>
+	<field name="studentId">
+		<field-validator type="int">
+			<message>You must enter a Student Id</message>
+		</field-validator>
+		<field-validator type="required">
+			<message>You must enter a Student Id</message>
+		</field-validator>
+			</field>
 	<field name="name">
 		<field-validator type="requiredstring">
 			<message>You must enter a Name</message>

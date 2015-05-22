@@ -53,6 +53,17 @@ public class LoginAction extends ActionSupport {
 		this.error = error;
 	}
 
+	/**
+	 * Contains display logic. Input validation is NOT performed.
+	 */
+	public String input() {
+		return INPUT;
+
+	}
+
+	/**
+	 * Contains submit logic. Input validation is performed.
+	 */
 	public String execute() {
 
 		if ("admin".equals(userId) && "admin".equals(password)) {
@@ -61,7 +72,7 @@ public class LoginAction extends ActionSupport {
 			// Add error to action that is displayed at view using
 			// <s:actionError/> tag
 			addActionError("Invalid ID/Password");
-			return ERROR;
+			return INPUT;
 		}
 
 	}
