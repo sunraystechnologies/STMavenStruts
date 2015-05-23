@@ -3,8 +3,8 @@
 <body>
 	<H1>Marksheet</H1>
 
-	<s:actionerror />
-	<s:actionmessage />
+	<font color="red"><s:actionerror /></font>
+	<font color="green"><s:actionmessage /></font>
 	
 	<s:form action="Marksheet">
 

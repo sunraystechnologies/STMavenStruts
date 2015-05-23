@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC
+          "-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+          "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+
+	<field name="name">
+		<field-validator type="requiredstring">
+			<message key="error.name" />
+		</field-validator>
+	</field>
+
+	<field name="city">
+		<field-validator type="requiredstring">
+			<message key="error.city" />
+		</field-validator>
+	</field>
+
+	<field name="state">
+		<field-validator type="requiredstring">
+			<message key="error.state" />
+		</field-validator>
+	</field>
+
+	<field name="phoneNo">
+		<field-validator type="requiredstring">
+			<message key="error.phoneNo" />
+		</field-validator>
+	</field>
+
+</validators>

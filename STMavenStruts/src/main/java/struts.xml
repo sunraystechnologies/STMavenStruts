@@ -32,6 +32,11 @@
 			<result name="input">jsp/Marksheet.jsp</result>
 		</action>
 
+	<action name="College" class="in.co.sunrays.struts.controller.CollegeAction">
+			<result name="success">jsp/College.jsp</result>
+			<result name="input">jsp/College.jsp</result>
+		</action>
+
 	</package>
 
 	<package name="defaultModuleTiles" namespace="/tiles" extends="tiles-default">
