@@ -3,7 +3,7 @@ package in.co.sunrays.struts.controller;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * Welcome Action
+ * Welcome Action, a simple action to view navigation example.
  * 
  * @author SUNRAYS Technologies
  * @version 1.0

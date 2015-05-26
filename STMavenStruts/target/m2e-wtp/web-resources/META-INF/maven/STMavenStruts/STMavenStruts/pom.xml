@@ -7,14 +7,28 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>STMavenStruts Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
 	<dependencies>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
 
 
 		<!-- Hibernate O/RM implementation of the JPA specification -->
@@ -31,18 +45,22 @@
 			<version>3.5.0-Final</version>
 		</dependency>
 
+
+		<!-- MySQL Connector Driver JARs -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
 		</dependency>
 
+		<!-- C3P0 Data Conneciton Pool -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.14</version>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.5</version>
 		</dependency>
 
+		<!-- Struts Dependecies -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>

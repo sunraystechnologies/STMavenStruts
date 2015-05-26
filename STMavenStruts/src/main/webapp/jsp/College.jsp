@@ -1,10 +1,14 @@
+<!-- content type  text/html; charset=utf-8 is required at your html page to support uni code characters-->
+
+<%@ page contentType="text/html; charset=utf-8" language="java"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
-<body>
 
+<body>
 	Language
 	<a href="College.action?request_locale=en">English</a> |
-	<a href="College.action?request_locale=hi">Hindi</a>
+	<a href="College.action?request_locale=hi">Hindi</a> |
+	<a href="College.action?request_locale=sp">Spanish</a>
 
 	<H1>
 		<s:text name="college.title" />

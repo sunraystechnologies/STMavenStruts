@@ -1,19 +1,31 @@
 package in.co.sunrays.struts.controller;
 
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * Login Action example
+ * Login Action controller. It applies server side manual validation. DMI should
+ * be enabled to run this example. Aware interface SessionAware is used to
+ * inject Web Session object to Action.
  * 
  * @author SUNRAYS Technologies
  * @version 1.0
  * @Copyright (c) SUNRAYS Technologies
  */
-public class LoginAction extends ActionSupport {
+public class LoginAction extends ActionSupport implements SessionAware {
 
 	private String userId = null;
 	private String password = null;
 	private String error = null;
+	private String operation = null;
+	private Map<String, Object> session = null;
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
 
 	/**
 	 * Programmatic (manual) Input validation
@@ -53,12 +65,20 @@ public class LoginAction extends ActionSupport {
 		this.error = error;
 	}
 
+	public String getOperation() {
+		return operation;
+	}
+
+	public void setOperation(String operation) {
+		this.operation = operation;
+	}
+
 	/**
 	 * Contains display logic. Input validation is NOT performed.
 	 */
 	public String input() {
+		session.clear();
 		return INPUT;
-
 	}
 
 	/**
@@ -67,7 +87,9 @@ public class LoginAction extends ActionSupport {
 	public String execute() {
 
 		if ("admin".equals(userId) && "admin".equals(password)) {
+			session.put("user", "admin");
 			return SUCCESS;
+
 		} else {
 			// Add error to action that is displayed at view using
 			// <s:actionError/> tag

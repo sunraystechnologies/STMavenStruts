@@ -5,13 +5,13 @@
 
 	<font color="red"><s:actionerror /></font>
 	<font color="green"><s:actionmessage /></font>
-	
+
 	<s:form action="Marksheet">
 
 		<s:hidden name="id" />
-		<s:textfield name="rollNo" label="Roll Number" />
-		<s:textfield name="studentId" label="Student Id" />
-		<s:textfield name="name" label="Name" />
+		<s:textfield name="rollNo" label="Roll Number*" />
+		<s:textfield name="studentId" label="Student Id*" />
+		<s:textfield name="name" label="Name*" />
 		<s:textfield name="physics" label="Physics" />
 		<s:textfield name="chemistry" label="Chemistry" />
 		<s:textfield name="maths" label="Maths" />

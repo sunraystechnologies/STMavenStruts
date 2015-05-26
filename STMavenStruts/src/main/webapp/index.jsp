@@ -1,24 +1,30 @@
 <html>
+
 <body>
-	<h2>Hello Struts!</h2>
+	<h2>SUNRAYS Hello Struts!</h2>
+
 	<ul>
 		<li><a href="Welcome.action">Welcome</a>: Simple navigation
 			example.
 		<li><a href="Person.action">Person</a>: Server side declarative
 			validation.
 		<li>
-		<li><a href="Login!input.action">Login</a>: Simple struts form
-			and conditional navigation along with manual validation.<br>
-			Display URL <a href="Login!input.action">http://localhost:8080/STMavenStruts/Login<b>!input</b>.action
+		<li>Login: Simple struts form and conditional navigation along
+			with manual validation.<br> Display URL <a
+			href="Login!input.action">http://localhost:8080/STMavenStruts/Login<b>!input</b>.action
 		</a>><br> Submit URL <a href="Login.action">http://localhost:8080/STMavenStruts/Login.action</a><br>
 		<li>
-		<li><a href="Marksheet.action">Marksheet</a>: Struts form with
-			type conversion and declarative validation. <BR> Display URL <a
-			href="Marksheet!input.action">http://localhost:8080/STMavenStruts/Marksheet<b>!input</b>.action
-		</a><br> Submit URL <a href="Marksheet.action">http://localhost:8080/STMavenStruts/Marksheet.action</a><br>
+		<li>/app package
+		<li>Marksheet: Struts form with type conversion and declarative
+			validation. <BR>Display URL <a href="app/Marksheet!input.action">http://localhost:8080/STMavenStruts/Marksheet<b>!input</b>.action
+		</a> <br> Submit URL <a href="app/Marksheet.action">http://localhost:8080/STMavenStruts/Marksheet.action</a><br>
+			<BR> Add Marksheet <a href="app/Marksheet!input.action">http://localhost:8080/STMavenStruts/Marksheet<b>!input</b>.action
+		</a> <BR> Edit Marksheet <a href="app/Marksheet!input.action?id=5">http://localhost:8080/STMavenStruts/Marksheet<b>!input</b>.action?id=5
+		</a>
 		<LI>
-		<li><a href="College!input.action">College</a>: Example of
-			internationalization.
+		<li>Example of internationalization (Multi-language support). <br>
+			<a href="app/College!input.action">Add College </a>: Add a college,
+			applies declarative server side validation
 	</ul>
 </body>
 </html>

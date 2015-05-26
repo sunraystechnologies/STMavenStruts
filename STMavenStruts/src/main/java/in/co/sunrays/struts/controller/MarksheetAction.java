@@ -9,7 +9,12 @@ import in.co.sunrays.struts.model.ModelFactory;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * Marksheet Action with declarative server side input validation
+ * Marksheet controller. Its applies declarative server side input validation.
+ * It communicate with database using hibernate Model and add/update/delete a
+ * marksheet.
+ * 
+ * DMI need to be enabled to make it workable.
+ * 
  * 
  * @author SUNRAYS Technologies
  * @version 1.0
@@ -28,7 +33,7 @@ public class MarksheetAction extends ActionSupport {
 	 * ID of Student
 	 */
 
-	private long studentId;
+	private Long studentId;
 	/**
 	 * Name of Student
 	 */
@@ -64,11 +69,11 @@ public class MarksheetAction extends ActionSupport {
 		this.rollNo = rollNo;
 	}
 
-	public long getStudentId() {
+	public Long getStudentId() {
 		return studentId;
 	}
 
-	public void setStudentId(long studentId) {
+	public void setStudentId(Long studentId) {
 		this.studentId = studentId;
 	}
 
@@ -112,6 +117,11 @@ public class MarksheetAction extends ActionSupport {
 		this.operation = operation;
 	}
 
+	/**
+	 * Contains display logic. Gets a Marksheet for update if primary key id is
+	 * given.
+	 */
+
 	public String input() {
 		MarksheetModelInt model = ModelFactory.getInstance()
 				.getMarksheetModel();
@@ -119,6 +129,13 @@ public class MarksheetAction extends ActionSupport {
 		if (id > 0) {
 			try {
 				MarksheetDTO dto = model.findByPK(id);
+				id = dto.getId();
+				rollNo = dto.getRollNo();
+				name = dto.getName();
+				studentId = dto.getStudentId();
+				physics = dto.getPhysics();
+				maths = dto.getMaths();
+				chemistry = dto.getChemistry();
 			} catch (ApplicationException e) {
 				e.printStackTrace();
 			}
@@ -126,7 +143,11 @@ public class MarksheetAction extends ActionSupport {
 		return INPUT;
 	}
 
+	/**
+	 * Contains submit logic. It adds or updates a Marksheet.
+	 */
 	public String execute() {
+
 		MarksheetDTO dto = new MarksheetDTO();
 		dto.setId(id);
 		dto.setRollNo(rollNo);

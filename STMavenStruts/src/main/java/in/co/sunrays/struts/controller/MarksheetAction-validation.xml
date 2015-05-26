@@ -7,22 +7,24 @@
 
 	<field name="rollNo">
 		<field-validator type="requiredstring">
-			<message>You must enter a Roll Number</message>
+			<message>Roll Number is required</message>
 		</field-validator>
+	
 	</field>
 	<field name="studentId">
 		<field-validator type="int">
-			<message>You must enter a Student Id</message>
+			<message>Student ID must be an integer</message>
 		</field-validator>
 		<field-validator type="required">
-			<message>You must enter a Student Id</message>
-		</field-validator>
-			</field>
-	<field name="name">
-		<field-validator type="requiredstring">
-			<message>You must enter a Name</message>
+			<message>Student Id is required</message>
 		</field-validator>
 	</field>
+	<field name="name">
+		<field-validator type="requiredstring">
+			<message>Name is required</message>
+		</field-validator>
+	</field>
+	
 	<field name="maths">
 		<field-validator type="int">
 			<param name="min">0</param>
