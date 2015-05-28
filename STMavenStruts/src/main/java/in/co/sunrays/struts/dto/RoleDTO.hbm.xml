@@ -10,19 +10,15 @@
 		</id>
 		<property name="name" type="java.lang.String" column="NAME"
 			length="50">
-			</property>
+		</property>
 		<property name="description" type="java.lang.String" column="DESCRIPTION"
 			length="50">
-			</property>
-		<property name="createdBy" type="java.lang.String" column="CREATED_BY"
-			length="50">
-			</property>
-		<property name="modifiedBy" type="java.lang.String" column="MODIFIED_BY"
-			length="50">
-			</property>
-		<property name="createdDatetime" type="timestamp" column="CREATED_DATETIME">
-			</property>
-		<property name="modifiedDatetime" type="timestamp" column="MODIFIED_DATETIME">
-			</property>
+		</property>
+		
+		<!-- <property name="createdBy" type="java.lang.String" column="CREATED_BY" 
+			length="50"> </property> <property name="modifiedBy" type="java.lang.String" 
+			column="MODIFIED_BY" length="50"> </property> <property name="createdDatetime" 
+			type="timestamp" column="CREATED_DATETIME"> </property> <property name="modifiedDatetime" 
+			type="timestamp" column="MODIFIED_DATETIME"> </property> -->
 	</class>
 </hibernate-mapping>

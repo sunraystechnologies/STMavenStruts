@@ -2,7 +2,8 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="in.co.sunrays.struts.dto">
-	<class name="StudentDTO" table="STUDENT" dynamic-insert="true"
+
+	<class name="StudentDTO" table="ST_STUDENT" dynamic-insert="true"
 		dynamic-update="true">
 		<id name="id" column="ID" length="20">
 			<generator class="increment"></generator>
@@ -15,27 +16,22 @@
 		</property>
 		<property name="firstName" type="java.lang.String" column="FIRST_NAME"
 			length="50">
-			</property>
+		</property>
 		<property name="lastName" type="java.lang.String" column="LAST_NAME"
 			length="50">
-			</property>
+		</property>
 		<property name="dob" type="java.util.Date" column="DATE_OF_BIRTH">
-			</property>
+		</property>
 		<property name="mobileNo" type="java.lang.String" column="MOBILE_NO"
 			length="15">
-			</property>
+		</property>
 		<property name="email" type="java.lang.String" column="EMAIL"
 			length="20">
-			</property>
-		<property name="createdBy" type="java.lang.String" column="CREATED_BY"
-			length="50">
-			</property>
-		<property name="modifiedBy" type="java.lang.String" column="MODIFIED_BY"
-			length="50">
-			</property>
-		<property name="createdDatetime" type="timestamp" column="CREATED_DATETIME">
-			</property>
-		<property name="modifiedDatetime" type="timestamp" column="MODIFIED_DATETIME">
-			</property>
+		</property>
+		<!-- <property name="createdBy" type="java.lang.String" column="CREATED_BY" 
+			length="50"> </property> <property name="modifiedBy" type="java.lang.String" 
+			column="MODIFIED_BY" length="50"> </property> <property name="createdDatetime" 
+			type="timestamp" column="CREATED_DATETIME"> </property> <property name="modifiedDatetime" 
+			type="timestamp" column="MODIFIED_DATETIME"> </property> -->
 	</class>
 </hibernate-mapping>

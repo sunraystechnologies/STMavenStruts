@@ -41,8 +41,9 @@
 
 	</package>
 
-	<package name="app" namespace="/app" extends="struts-default">
+	<!-- Pakage \app configures Interceptors and Global results -->
 
+	<package name="app" namespace="/app" extends="struts-default">
 
 		<interceptors>
 
@@ -63,7 +64,7 @@
 		<default-interceptor-ref name="myStack" />
 
 		<global-results>
-		    
+
 			<result name="logout" type="redirect">
 				/Login!input.action
 			</result>
@@ -87,37 +88,59 @@
 		</action>
 	</package>
 
-	<package name="defaultModuleTiles" namespace="/tiles" extends="tiles-default">
-		<action name="d_*" class="in.co.sunrays.proj2.action.{1}Action"
+
+	<!-- Pakage /tiles configures tiles and wildcart mapping -->
+
+	<package name="tilesApp" namespace="/tiles" extends="tiles-default">
+
+		<interceptors>
+
+			<interceptor name="frontCtl"
+				class="in.co.sunrays.struts.controller.FrontCtl" />
+
+			<interceptor name="logger"
+				class="in.co.sunrays.struts.controller.Logger" />
+
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="frontCtl" />
+				<interceptor-ref name="logger" />
+			</interceptor-stack>
+
+		</interceptors>
+
+		<default-interceptor-ref name="myStack" />
+
+		<global-results>
+
+			<result name="logout" type="redirect">
+				/Login!input.action
+			</result>
+
+			<result name="sessionExpired" type="redirect">
+				<param name="location">/Login!input.action</param>
+				<param name="error">Oops! Your session has been expired. Please
+					re-Login.</param>
+			</result>
+
+			<result name="Error" type="tiles">{1}</result>
+
+		</global-results>
+
+
+		<action name="d_*" class="in.co.sunrays.struts.controller.{1}Action"
 			method="input">
 			<result name="success" type="tiles">{1}</result>
 			<result name="input" type="tiles">{1}</result>
 		</action>
-	</package>
 
-	<package name="baseModuleTiles" namespace="/tiles" extends="tiles-default">
-
-		<action name="d_*" class="in.co.sunrays.proj2.action.{1}Action"
-			method="input">
-			<result name="success" type="tiles">{1}</result>
-			<result name="input" type="tiles">{1}</result>
-			<result name="Error" type="redirect">d_Error</result>
-			<result name="Logout" type="redirect">/auth/d_Login</result>
-		</action>
-
-		<action name="s_*" class="in.co.sunrays.proj2.action.{1}Action">
+		<action name="s_*" class="in.co.sunrays.struts.controller.{1}Action">
 			<result name="success" type="tiles">{1}</result>
 			<result name="input" type="tiles">{1}</result>
 			<result name="Save" type="tiles">{1}</result>
-			<result name="Delete" type="redirect">d_{1}List</result>
-			<result name="Cancel" type="redirect">d_{1}List</result>
-			<result name="Error" type="redirect">/d_Error</result>
-			<result name="Go" type="tiles">{1}</result>
-			<result name="Sign In" type="tiles">Welcome</result>
-			<result name="Sign Up" type="redirect">/auth/d_UserRegisration</result>
-			<result name="Logout" type="redirect">/auth/d_Login</result>
-			<result name="Register" type="redirect">/auth/d_Login</result>
 		</action>
+
 	</package>
+
 
 </struts>

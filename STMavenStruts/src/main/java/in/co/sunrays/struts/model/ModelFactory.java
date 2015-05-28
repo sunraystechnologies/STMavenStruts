@@ -49,13 +49,13 @@ public class ModelFactory {
 	}
 
 	/**
-	 * Get instance of Marksheet Service
+	 * Get instance of Marksheet Model
 	 * 
-	 * @return marksheetService
+	 * @return model
 	 */
 	public MarksheetModelInt getMarksheetModel() {
 		MarksheetModelInt marksheetService = (MarksheetModelInt) serviceCache
-				.get("marksheetService");
+				.get("marksheetModel");
 		if (marksheetService == null) {
 			if ("Hibernate".equals(DATABASE)) {
 				marksheetService = new MarksheetModelHibImpl();
@@ -63,10 +63,72 @@ public class ModelFactory {
 			if ("JDBC".equals(DATABASE)) {
 				marksheetService = new MarksheetModelJDBCImpl();
 			}
-			serviceCache.put("marksheetService", marksheetService);
+			serviceCache.put("marksheetModel", marksheetService);
 		}
 
 		return marksheetService;
 	}
 
+	/**
+	 * Get instance of Collage Service
+	 * 
+	 * @return collage
+	 */
+	public CollegeModelInt getCollegeModel() {
+		CollegeModelInt collegeService = (CollegeModelInt) serviceCache
+				.get("collegeModel");
+		if (collegeService == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				collegeService = new CollegeModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				collegeService = new CollegeModelJDBCImpl();
+			}
+			serviceCache.put("collegeModel", collegeService);
+		}
+
+		return collegeService;
+	}
+
+	/**
+	 * Get instance of Student Service
+	 * 
+	 * @return Student
+	 */
+	public StudentModelInt getStudentModel() {
+		StudentModelInt studentService = (StudentModelInt) serviceCache
+				.get("studentModel");
+		if (studentService == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				studentService = new StudentModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				studentService = new StudentModelJDBCImpl();
+			}
+			serviceCache.put("studentModel", studentService);
+		}
+
+		return studentService;
+	}
+
+	/**
+	 * Get instance of Role Model
+	 * 
+	 * @return Role
+	 */
+	public RoleModelInt getRoleModel() {
+		RoleModelInt roleService = (RoleModelInt) serviceCache.get("roleModel");
+		if (roleService == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				roleService = new RoleModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				roleService = new RoleModelJDBCImpl();
+			}
+			serviceCache.put("roleModel", roleService);
+		}
+
+		return roleService;
+
+	}
 }

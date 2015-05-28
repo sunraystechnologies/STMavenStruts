@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="BaseLayout" template="/common/BaseLayout.jsp">
+		<put-attribute name="header" value="/common/Header.jsp"></put-attribute>
+		<put-attribute name="footer" value="/common/Footer.jsp"></put-attribute>
+		<put-attribute name="title" value="ORS"></put-attribute>
+	</definition>
+
+	<definition name="Role" extends="BaseLayout">
+		<put-attribute name="title" value="ORS Role"></put-attribute>
+		<put-attribute name="body" value="/jsp/Role.jsp"></put-attribute>
+	</definition>
+
+		<definition name="RoleList" extends="BaseLayout">
+		<put-attribute name="title" value="ORS Role List"></put-attribute>
+		<put-attribute name="body" value="/jsp/RoleList.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>    
