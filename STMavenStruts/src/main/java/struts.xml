@@ -10,7 +10,6 @@
 	<!-- Application is running in Dev mode and refresh struts.xml on each request -->
 	<constant name="struts.devMode" value="true" />
 
-
 	<package name="default" namespace="/" extends="struts-default">
 
 		<global-results>
@@ -19,7 +18,6 @@
 			<result name="logout">
 				/Login!input.action
 			</result>
-
 			<result name="logout">/Login.action</result>
 			<result name="home">/jsp/Home.jsp</result>
 			<result name="aboutUs">/jsp/AboutUs.jsp</result>
@@ -82,10 +80,18 @@
 			<result name="input">/jsp/Marksheet.jsp</result>
 		</action>
 
+		<action name="MarksheetList"
+			class="in.co.sunrays.struts.controller.MarksheetListAction">
+			<result name="success">/jsp/MarksheetList.jsp</result>
+			<result name="input">/jsp/MarksheetList.jsp</result>
+		</action>
+
 		<action name="College" class="in.co.sunrays.struts.controller.CollegeAction">
 			<result name="success">/jsp/College.jsp</result>
 			<result name="input">/jsp/College.jsp</result>
 		</action>
+
+
 	</package>
 
 

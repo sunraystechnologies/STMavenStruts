@@ -9,7 +9,7 @@ package in.co.sunrays.struts.exception;
  * @Copyright (c) SUNRAYS Technologies
  * 
  */
-public class ApplicationException extends Exception {
+public class ApplicationException extends RuntimeException {
 
 	/**
 	 * @param msg

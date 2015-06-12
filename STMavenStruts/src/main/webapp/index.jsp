@@ -20,6 +20,7 @@
 		</a> <br> Submit URL <a href="app/Marksheet.action">http://localhost:8080/STMavenStruts/Marksheet.action</a><br>
 			<BR> Add Marksheet <a href="app/Marksheet!input.action">http://localhost:8080/STMavenStruts/Marksheet<b>!input</b>.action
 		</a> <BR> Edit Marksheet <a href="app/Marksheet!input.action?id=5">http://localhost:8080/STMavenStruts/Marksheet<b>!input</b>.action?id=5
+		</a> </a> <BR> Marksheet List <a href="app/MarksheetList!input.action">http://localhost:8080/STMavenStruts/MarksheetList<b>!input</b>.action
 		</a>
 		<LI><br>
 		<li>Example of internationalization (Multi-language support). <br>
